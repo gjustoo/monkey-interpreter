@@ -7,3 +7,9 @@
 - readDigit -> Implement floats, hex, octal support.
 - nextToken -> Extract method for the twoCharToken case.
 
+
+## AST
+
+## Parser
+
+- Implement expression parsing
