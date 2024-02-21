@@ -10,4 +10,3 @@ This is a Monkey interpreter written in Go. It is based on the book [Writing An 
 
 :) 
 
-## How to use
