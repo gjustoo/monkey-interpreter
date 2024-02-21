@@ -1,6 +1,10 @@
 # TODO
 
 
+- Clean up the code.
+- Better folder structure.
+
+
 ## Lexer
 
 - readIdent -> Implement UTF-8/unicode support.
@@ -12,4 +16,4 @@
 
 ## Parser
 
-- Implement expression parsing
+- Fix tests
