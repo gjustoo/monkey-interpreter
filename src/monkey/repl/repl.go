@@ -3,6 +3,7 @@ package repl
 import (
 	"bufio"
 	"fmt"
+	"interpreter/src/monkey/evaluator"
 	"interpreter/src/monkey/lexer"
 	"interpreter/src/monkey/parser"
 	"io"
@@ -35,29 +36,14 @@ func Start(in io.Reader, out io.Writer) {
 			continue
 		}
 
-		io.WriteString(out, program.String())
-
-		io.WriteString(out, "\n")
+		evaluated := evaluator.Eval(program)
+		if evaluated != nil {
+			io.WriteString(out, evaluated.Inspect())
+			io.WriteString(out, "\n")
+		}
 
 	}
 }
-
-// Lexer prompt
-// func Start(in io.Reader, out io.Writer) {
-// 	scanner := bufio.NewScanner(in)
-// 	for {
-// 		fmt.Printf(PROMPT)
-// 		scanned := scanner.Scan()
-// 		if !scanned {
-// 			return
-// 		}
-// 		line := scanner.Text()
-// 		l := lexer.New(line)
-// 		for tok := l.NextToken(); tok.Type != token.EOF; tok = l.NextToken() {
-// 			fmt.Printf("%+v\n", tok)
-// 		}
-// 	}
-// }
 
 func printParserErrors(out io.Writer, errors []string) {
 	io.WriteString(out, "Woops! We ran into some monkey business here!\n")
