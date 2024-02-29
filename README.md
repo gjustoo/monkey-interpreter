@@ -9,4 +9,3 @@ I am using this project to learn Go. I have been using Java for a while now and 
 This is a Monkey interpreter written in Go. It is based on the book [Writing An Interpreter In Go](https://interpreterbook.com/) by Thorsten Ball.
 
 :) 
-
